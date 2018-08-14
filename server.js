@@ -38,6 +38,7 @@ hbs.registerHelper('screamIt', (text) => { //registering a reusable function
     return text.toUpperCase();
 });
 
+/* - - [ SERVER CODE / PAGES ] - - */
 //root/home route
 app.get('/', (req, res) => {
 
@@ -62,6 +63,15 @@ app.get('/bad', (req, res) => {
     
     res.send({
         errorMessage: 'Unable to handle request'
+    });
+
+});
+
+//portfolio page
+app.get('/projects', (req, res) => {
+
+    res.render('portfolio.hbs', {
+        pageTitle: 'Portfolio Page'
     });
 
 });
