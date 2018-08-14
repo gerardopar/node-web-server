@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 /* - - [ SERVER CODE / APP CODE ] - - */
+const port = process.env.PORT || 3000;
 let app = express(); //initializing express server
 
 hbs.registerPartials(__dirname + '/views/partials/'); //registering template partials
@@ -66,8 +67,8 @@ app.get('/bad', (req, res) => {
 });
 
 //server up on port 3000
-app.listen(3000, () => {
-    console.log('server is up on port 3000');
+app.listen(port, () => {
+    console.log(`server is up on port ${port}`);
 });
 
 //this command keeps an eye on the js & hbs files
